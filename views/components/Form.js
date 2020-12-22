@@ -1,109 +1,81 @@
 let Form = {
-    render: async (title) => {
-        let view =`
+	render: async (title) => {
+		let view = `
             <!-- Subscribe Section -->
                         <div class="position-relative text-center rounded"
-                            style="display: none; background: url('assets/img/yannik-mika-GjFbKfI874o-unsplash.jpg'); background-size:cover;">
-                            <div class="container space-2 space-bottom-lg-4">
-                                <!-- Title -->
-                                <div class="w-md-60 mx-md-auto mb-5 mb-md-7 text-white">
-                                    <h2>Join as ${title}</h2>
-        
-        
-        
+                            style="display: none; background-image: linear-gradient(to left, rgb(58, 97, 134), rgb(137, 37, 62)); background-size:cover;">
+                            
+                            <section id="contact">
+                                <div class="section-content">
+                                    <h1 class="section-header">Get in touch as<span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s"> ${title}</span></h1>
+                            
                                 </div>
-                                <!-- End Title -->
-        
-                                <!-- Subscribe Form -->
-                                <div class="w-md-75 w-lg-50 mx-md-auto">
-                                    <form class="mb-3">
-        
-                                        <div class="form-row">
-                                            <div class="col-sm-12 mb-2">
-        
-                                            <mgt-people-picker id="picker1" show-max="4"></mgt-people-picker>
-        
+                                <div class="contact-section">
+                                <div class="container">
+                                    <form>
+                                        <div class="col-md-6 form-line">
+                                            <div class="form-group">
+                                                <label for="exampleInputUsername">Your name</label>
+                                                <input type="text" class="form-control" id="" placeholder=" Enter Name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail">Email Address</label>
+                                                <input type="email" class="form-control" id="exampleInputEmail" placeholder=" Enter Email id">
+                                            </div>	
+                                            <div class="form-group">
+                                                <label for="telephone">Mobile No.</label>
+                                                <input type="tel" class="form-control" id="telephone" placeholder=" Enter 10-digit mobile no.">
                                             </div>
                                         </div>
-        
-        
-        
-        
-                                        <div class="form-row">
-                                            <div class="col-sm-12 mb-2">
-        
-                                                <div class="input-group input-group-pill">
-        
-                                                    <input type="text" class="form-control organizationInput" name="email"
-                                                         placeholder="Your team/organization"
-                                                        aria-label="Your team" required>
-                                                </div>
-        
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for ="description"> Message</label>
+                                                <textarea  class="form-control" id="description" placeholder="Enter Your Message"></textarea>
                                             </div>
-        
+                                            <div>
+                                                <button type="reset" id=SubBtn class="btn btn-default"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Send Message</button>
+                                            </div>
+                                            
                                         </div>
-                                        <div class='form-row'>
-        
-        
-                                            <div class="btn-group btn-group-toggle col-md-8  " data-toggle="buttons">
-                                                <label class="btn btn-dark active">
-                                                    <input type="radio" name="fullTime" class="YesRadio" value="eventList"
-                                                        checked> Full-Time
-                                                </label>
-                                                <label class="btn btn-dark">
-                                                    <input type="radio" name="fullTime" class="NoRadio"> Part-Time
-                                                </label>
-                                            </div>
-                                            <div class="col-sm-4 ">
-                                                <button type="reset" id=SubBtn class="btn btn-primary btn-pill btn-wide"
-                                                    >Subscribe</button>
-                                            </div>
-                                        </div>
-        
                                     </form>
                                 </div>
-                                <!-- End Subscribe Form -->
-                            </div>
+                            </section>
+
                         </div>
                         <!-- End Subscribe Section --></div>
-            `
-        
-        return view
-    },
-    after_render: async (title) => {
-        $('#SubBtn').click(function(e){
-            let fullTime;
-            if ($('.YesRadio')[0].checked) {
-                fullTime = "Yes";
-            }
-            else {
-                fullTime = "No"
-            }
-            fetch("/acopList", {
-                method: "POST",
-                body: JSON.stringify({
-                  
-                    "Email": document.querySelector("#picker1").selectedPeople[0].mail,
-                    "Name": document.querySelector("#picker1").selectedPeople[0].displayName,
-                    "Role": title,
-                    "Organization": $('.organizationInput')[0].value,
-                    "Full_Time_Role":fullTime
+            `;
 
-
-
-
-                }),
-                headers: { "Accept": "application/json; odata=verbose", "Content-Type": "application/json;odata=verbose"},
-                cardinentals: 'same-origin'
-            }).then((response) => response.json())
-                .then((data) => {
-                    console.log(data)
-                });
-
-        });
-      
-    }
-
-}
+		return view;
+	},
+	after_render: async (title) => {
+		$('#SubBtn').click(function(e) {
+			let fullTime;
+			if ($('.YesRadio')[0].checked) {
+				fullTime = 'Yes';
+			} else {
+				fullTime = 'No';
+			}
+			fetch('/acopList', {
+				method: 'POST',
+				body: JSON.stringify({
+					Email: document.querySelector('#picker1').selectedPeople[0].mail,
+					Name: document.querySelector('#picker1').selectedPeople[0].displayName,
+					Role: title,
+					Organization: $('.organizationInput')[0].value,
+					Full_Time_Role: fullTime
+				}),
+				headers: {
+					Accept: 'application/json; odata=verbose',
+					'Content-Type': 'application/json;odata=verbose'
+				},
+				cardinentals: 'same-origin'
+			})
+				.then((response) => response.json())
+				.then((data) => {
+					console.log(data);
+				});
+		});
+	}
+};
 
 export default Form;
