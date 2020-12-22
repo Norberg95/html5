@@ -1,0 +1,309 @@
+input[type=password],
+input[type=text],
+input[type=file],
+select,
+textarea,
+.sp-peoplepicker-topLevel,
+.sp-peoplepicker-topLevelDisabled,
+.sp-peoplepicker-autoFillContainer,
+.ms-inputBox {
+	/* [ReplaceColor(themeColor:"Lines")] */
+	border: 1px solid #ababab;
+	/* [ReplaceColor(themeColor:"BackgroundOverlay",opacity:"1")] */
+	background-color: #fff;
+	/* [ReplaceColor(themeColor:"BackgroundOverlay")] */
+	background-color: rgba(255, 255, 255, 0.85);
+	/* [ReplaceColor(themeColor:"BodyText")] */
+	color: #444;
+}
+input[type=password]:focus,
+input[type=text]:focus,
+select:focus,
+textarea:focus,
+.sp-peoplepicker-topLevelFocus,
+.ms-inputBoxActive,
+.ms-inputBox.ms-inputBoxActive:hover {
+	/* [ReplaceColor(themeColor:"AccentLines")] */
+	border-color: #2a8dd4;
+}
+input[type=password]:hover,
+input[type=text]:hover,
+input[type=file]:hover,
+textarea:hover,
+.sp-peoplepicker-topLevel:hover,
+.ms-inputBox:hover {
+	/* [ReplaceColor(themeColor:"StrongLines")] */
+	border-color: #92c0e0;
+}
+input[type=password][disabled],
+input[type=text][disabled],
+input[type=file][disabled],
+textarea[disabled],
+select[disabled],
+.sp-peoplepicker-topLevelDisabled,
+.ms-inputBoxDisabled {
+	/* [ReplaceColor(themeColor:"DisabledText")] */
+	color: #b1b1b1;
+	/* [ReplaceColor(themeColor:"DisabledLines")] */
+	border-color: #e1e1e1;
+	/* [ReplaceColor(themeColor:"DisabledBackground",opacity:"1")] */
+	background-color: #fdfdfd;
+	/* [ReplaceColor(themeColor:"DisabledBackground")] */
+	background-color: #fdfdfd;
+}
+.ms-ssc-moreAdmins .sp-peoplepicker-errorMsg {
+	margin-left: 0px;
+	font-size: .9em;
+}
+.sp-peoplepicker-topLevel,
+.sp-peoplepicker-topLevelDisabled {
+	cursor: text;
+	height: 100%;
+	width: 371px;
+	position: relative;
+	padding: 3px 25px 3px 0px;
+}
+
+input.sp-peoplepicker-editorInput[type=text] {
+	border: 0px;
+	padding: 0px 1px;
+	margin-left: 5px;
+	vertical-align: inherit;
+	background-color: transparent;
+}
+input.sp-peoplepicker-editorInput[type=text]:focus {
+	outline: 0px;
+}
+input.sp-peoplepicker-editorInput::-ms-clear {
+	display: none;
+}
+.sp-peoplepicker-autoFillContainer {
+	z-index: 1;
+	padding: 0px;
+	display: none;
+	cursor: default;
+	max-width: 300px;
+	min-width: 300px;
+	position: absolute;
+	/* [ReplaceColor(themeColor:"SubtleLines")] */
+	border-color: #c6c6c6;
+}
+.sp-peoplepicker-initialHelpText {
+	top: 3px;
+	left: 4px;
+	position: absolute;
+}
+.sp-peoplepicker-autoFillPresence {
+	z-index: 1;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+}
+.sp-peoplepicker-userSpan {
+	cursor: pointer;
+	white-space: nowrap;
+	display: inline-block;
+	margin: 0px 5px 1px 2px;
+}
+.sp-peoplepicker-delImage {
+	margin-left: 3px;
+}
+.sp-peoplepicker-delImage:hover {
+	text-decoration: none;
+}
+.sp-peoplepicker-userPresence {
+	margin-right: 3px;
+	display: inline-block;
+}
+.sp-peoplepicker-userSpan .ms-entity-unresolved {
+	font-style: normal;
+}
+.sp-peoplepicker-userSpan .ms-entity-resolved {
+	vertical-align: bottom;
+}
+.sp-peoplepicker-userSpan .ms-entity-unresolved,
+.sp-peoplepicker-userSpan .ms-entity-resolved {
+	overflow: hidden;
+}
+.sp-peoplepicker-userDisplayLink {
+	/* [ReplaceColor(themeColor:"BodyText")] */
+	color: #444;
+}
+.sp-peoplepicker-userDisplayLink:hover {
+	text-decoration: none;
+}
+.sp-peoplepicker-waitImg {
+	width: 16px;
+	height: 16px;
+	display: none;
+	font-size: 0px;
+	position: absolute;
+}
+.sp-peoplepicker-errorMsg {
+	margin-top: 6px;
+	margin-left: 6px;
+	display: inline-block;
+}
+.sp-peoplepicker-autoFillContainer .ms-core-menu-item{
+    white-space:nowrap;
+    padding:1px 5px 3px 5px;
+    }
+    .sp-peoplepicker-autoFillContainer .ms-core-menu-link{
+    padding:0px;
+    }
+    .sp-peoplepicker-autoFillContainer .ms-core-menu-label{
+    display:block;
+    }
+    .sp-autoFill-menu{
+    min-width:100%;
+    }
+    .sp-peoplepicker-autoFillContainer .sp-autoFill-scroll{
+    width:100%;
+    border:none;
+    margin:0px;
+    padding:0px;
+    min-width:100%;
+    padding-top:3px;
+    overflow-y:auto;
+    overflow-x:hidden;
+    margin-right:10px;
+    list-style-type:none;
+    box-shadow:0px 0px 0px 0px transparent;
+    /* [ReplaceColor(themeColor:"BackgroundOverlay",opacity:"1.0")] */ background-color:#fff;
+    }
+    .sp-autoFill-scroll .ms-core-menu-label{
+    border:none;
+    }
+    .ms-core-menu-item > .ms-core-menu-box > .ms-core-menu-list
+    {
+    padding:0px;
+    }
+    .ms-core-menu-item
+{
+margin:0px;
+cursor:pointer;
+border:1px solid transparent;
+}
+.ms-core-menu-hasIcons > .ms-core-menu-list > .ms-core-menu-item
+{
+min-height:24px;
+}
+.ms-core-menu-hasIcons.ms-core-menu-boxBig > .ms-core-menu-list > .ms-core-menu-item
+{
+min-height:40px;
+}
+.ms-core-menu-hasIcons > .ms-core-menu-list > .ms-core-menu-item > .ms-core-menu-link > .ms-core-menu-label,
+.ms-core-menu-hasIcons > .ms-core-menu-list > .ms-core-menu-item > .ms-core-menu-link > .ms-core-menu-labelCompact
+{
+padding-left:21px;
+}
+.ms-core-menu-hasIcons.ms-core-menu-boxBig > .ms-core-menu-list > .ms-core-menu-item > .ms-core-menu-link > .ms-core-menu-label,
+.ms-core-menu-hasIcons.ms-core-menu-boxBig > .ms-core-menu-list > .ms-core-menu-item > .ms-core-menu-link > .ms-core-menu-labelCompact
+{
+padding-left:37px;
+}
+.ms-core-menu-item:hover,
+.ms-core-menu-itemSelected
+{
+/* [ReplaceColor(themeColor:"HoverBackground")] */ background-color:rgba( 205,230,247,0.5 );
+}
+.ms-core-menu-item[disabled=true]:hover,
+.ms-core-menu-itemDisabled.ms-core-menu-item:hover,
+.ms-core-menu-itemDisabled.ms-core-menu-itemSelected
+{
+background-color:transparent;
+}
+.ms-core-needIEFilter .ms-core-menu-item:hover,
+.ms-core-needIEFilter .ms-core-menu-itemSelected
+{
+/* [ReplaceColor(THEME_COLOR_BACKGROUND_SOLID,opacity:"1")] */ background-color:#cde6f7;
+}
+.ms-core-needIEFilter .ms-core-menu-item[disabled=true]:hover,
+.ms-core-needIEFilter .ms-core-menu-itemDisabled.ms-core-menu-item:hover,
+.ms-core-needIEFilter .ms-core-menu-itemDisabled.ms-core-menu-itemSelected
+{
+background-color:transparent;
+}
+.ms-core-menu-item[disabled=true] > .ms-core-menu-link > .ms-core-menu-label > .ms-core-menu-title,
+.ms-core-menu-itemDisabled > .ms-core-menu-link > .ms-core-menu-label > .ms-core-menu-title
+{
+/* [ReplaceColor(themeColor:"DisabledText")] */ color:#b1b1b1;
+}
+.ms-core-menu-item[disabled=true],
+.ms-core-menu-item[disabled=true] > .ms-core-menu-link,
+.ms-core-menu-itemDisabled,
+.ms-core-menu-itemDisabled > .ms-core-menu-link
+{
+cursor:default;
+}
+a.ms-core-menu-link
+{
+padding:6px 8px;
+/* [ReplaceColor(themeColor:"BodyText")] */ color:#444;
+text-decoration:none;
+display:block;
+position:relative;
+}
+a.ms-core-menu-link:focus
+{
+outline:1px dotted transparent;
+}
+.ms-core-menu-hasArrow > .ms-core-menu-link
+{
+padding-right:15px;
+}
+.ms-core-menu-link:link,
+.ms-core-menu-link:visited
+{
+/* [ReplaceColor(themeColor:"BodyText")] */ color:#444;
+}
+#suiteBar a.ms-core-menu-link
+{
+padding:6px 15px;
+}
+.sp-autoFill-scroll .ms-core-menu-label{
+    border:none;
+    }
+    .ms-core-menu-label,
+    .ms-core-menu-labelCompact
+    {
+    border:1px solid transparent;
+    word-wrap:break-word;
+    }
+    .ms-core-menu-separator:first-child
+    {
+    display:none;
+    }
+    .ms-core-menu-separatorHr
+    {
+    margin:2px 0px;
+    /* [ReplaceColor(themeColor:"SubtleLines")] */ color:#c6c6c6;
+    }
+    .ms-core-menu-footer{
+        margin:0px;
+        cursor:default;
+        padding:0px 12px 7px 5px;
+        }
+        .ms-textSmall,
+        .ms-textXSmall,
+        .ms-metadata,
+        .ms-descriptiontext,
+        .ms-secondaryCommandLink
+        {
+        font-size:.9em;
+        }
+        .ms-entity-resolved
+        {
+        text-decoration:underline;
+        display:inline-block;
+        }
+        .ms-entity-unresolved
+        {
+        cursor:pointer;
+        background-repeat:repeat-x;
+        background-position:left bottom;
+        padding-bottom:2px;
+        vertical-align:text-top;
+        display:inline-block;
+        /* [RecolorImage(themeColor:"ErrorText",method:"Filling")] */ background-image:url("/_layouts/15/images/UserSquiggle.png?rev=23");
+        }
